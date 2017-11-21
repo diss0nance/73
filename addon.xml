@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>product_material</id>
+    <version>1.0</version>
+    <priority>3000</priority>
+    <position>140</position>
+    <status>active</status>
+    <default_language>en</default_language>
+    <auto_install>MULTIVENDOR,ULTIMATE</auto_install>
+    <queries>
+        <item for="install">ALTER TABLE `?:products` ADD `material` varchar(255) not null default '';</item>
+        <item for="install">ALTER TABLE `?:products` ADD `available_from` int(11) unsigned NOT NULL default '0';</item>
+        <item for="install">ALTER TABLE `?:products` ADD `comment` mediumtext;</item>
+
+        <item for="uninstall">ALTER TABLE `?:products` DROP `material`;</item>
+        <item for="uninstall">ALTER TABLE `?:products` DROP `available_from`;</item>
+        <item for="uninstall">ALTER TABLE `?:products` DROP `comment`;</item>
+    </queries>
+</addon>
